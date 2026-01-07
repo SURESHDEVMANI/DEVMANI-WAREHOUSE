@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Devmani Warehouses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+    }
+
+    /* HEADER */
+    .header {
+      background: #0f2a44;
+      color: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .login-btn {
+      background: #ff9800;
+      color: black;
+      padding: 8px 15px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 60px;
+      background: white;
+    }
+
+    .hero h2 {
+      color: #0f2a44;
+    }
+
+    /* LOGIN PANEL */
+    .login-panel {
+      position: fixed;
+      top: 0;
+      right: -320px;
+      width: 300px;
+      height: 100%;
+      background: white;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .login-panel.active {
+      right: 0;
+    }
+
+    .login-panel input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    .login-panel button {
+      width: 100%;
+      padding: 10px;
+      background: #0f2a44;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>Devmani Warehouses</h1>
+  <button class="login-btn" onclick="openLogin()">Login</button>
+</div>
+
+<!-- CONTENT -->
+<div class="hero">
+  <h2>Welcome to Devmani Warehouses</h2>
+  <p>
+    Reliable warehousing, inventory control, and logistics solutions.
+  </p>
+</div>
+
+<!-- LOGIN PANEL -->
+<div class="login-panel" id="loginPanel">
+  <h3>Login</h3>
+  <input type="text" id="uid" placeholder="User ID">
+  <input type="password" id="pwd" placeholder="Password">
+  <button onclick="login()">Login</button>
+</div>
+
+<script>
+function openLogin() {
+  document.getElementById("loginPanel").classList.toggle("active");
+}
+
+function login() {
+  const id = document.getElementById("uid").value;
+  const pass = document.getElementById("pwd").value;
+
+  if(id === "DEVMANITEAM" && pass === "Devmani@2026") {
+    window.location.href = "https://script.google.com/a/macros/devmani.net/s/AKfycbww6yRsv6j3ibLloCNkO9Ggu9rFRfPPKCi3Fd72aulQKfE-4il2m_8HmLmcDOg65WOU/exec";
+  } else {
+    alert("Wrong ID or Password");
+  }
+}
+</script>
+
+</body>
+</html>
