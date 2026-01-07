@@ -1,99 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Devmani Warehouses</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Devmani Warehouses</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI, Arial, sans-serif;
+  background:#f4f6f9;
+  color:#333;
+}
 
-    /* HEADER */
-    .header {
-      background: #0f2a44;
-      color: white;
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+/* HEADER */
+header{
+  background:#0b2a45;
+  color:white;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+header h1{
+  margin:0;
+  font-size:22px;
+}
+header nav a{
+  color:white;
+  margin:0 15px;
+  text-decoration:none;
+  font-size:15px;
+}
+.login-btn{
+  background:#f5a623;
+  border:none;
+  padding:8px 15px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    .header h1 {
-      margin: 0;
-      font-size: 22px;
-    }
+/* HERO */
+.hero{
+  background:white;
+  padding:60px 40px;
+}
+.hero h2{
+  color:#0b2a45;
+}
+.hero p{
+  max-width:700px;
+  line-height:1.6;
+}
 
-    .login-btn {
-      background: #ff9800;
-      color: black;
-      padding: 8px 15px;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-    }
+/* SECTIONS */
+.section{
+  padding:40px;
+  background:#ffffff;
+  margin-top:10px;
+}
+.section h3{
+  color:#0b2a45;
+}
 
-    /* HERO SECTION */
-    .hero {
-      padding: 60px;
-      background: white;
-    }
+/* FOOTER */
+footer{
+  background:#0b2a45;
+  color:white;
+  text-align:center;
+  padding:15px;
+}
 
-    .hero h2 {
-      color: #0f2a44;
-    }
-
-    /* LOGIN PANEL */
-    .login-panel {
-      position: fixed;
-      top: 0;
-      right: -320px;
-      width: 300px;
-      height: 100%;
-      background: white;
-      box-shadow: -2px 0 10px rgba(0,0,0,0.2);
-      padding: 20px;
-      transition: 0.3s;
-    }
-
-    .login-panel.active {
-      right: 0;
-    }
-
-    .login-panel input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-    }
-
-    .login-panel button {
-      width: 100%;
-      padding: 10px;
-      background: #0f2a44;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
+/* LOGIN PANEL */
+.login-panel{
+  position:fixed;
+  top:0;
+  right:-340px;
+  width:320px;
+  height:100%;
+  background:white;
+  box-shadow:-3px 0 12px rgba(0,0,0,0.3);
+  padding:25px;
+  transition:0.4s;
+  z-index:1000;
+}
+.login-panel.active{
+  right:0;
+}
+.login-panel h3{
+  margin-top:0;
+  color:#0b2a45;
+}
+.login-panel input{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+}
+.login-panel button{
+  width:100%;
+  padding:10px;
+  background:#0b2a45;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+</style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
+<header>
   <h1>Devmani Warehouses</h1>
-  <button class="login-btn" onclick="openLogin()">Login</button>
-</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <button class="login-btn" onclick="toggleLogin()">Login</button>
+  </nav>
+</header>
 
-<!-- CONTENT -->
 <div class="hero">
-  <h2>Welcome to Devmani Warehouses</h2>
+  <h2>Trusted Warehousing & Logistics Partner</h2>
   <p>
-    Reliable warehousing, inventory control, and logistics solutions.
+    Devmani Warehouses provides professional storage, inventory management,
+    and logistics solutions with reliability, transparency, and efficiency.
   </p>
 </div>
+
+<div class="section">
+  <h3>Our Services</h3>
+  <p>✔ Warehousing & Storage</p>
+  <p>✔ Inventory Management</p>
+  <p>✔ Distribution & Logistics</p>
+</div>
+
+<div class="section">
+  <h3>Why Choose Us</h3>
+  <p>
+    Secure infrastructure, trained staff, modern systems,
+    and customer-focused operations.
+  </p>
+</div>
+
+<footer>
+  © 2026 Devmani Warehouses. All Rights Reserved.
+</footer>
 
 <!-- LOGIN PANEL -->
 <div class="login-panel" id="loginPanel">
@@ -104,21 +156,22 @@
 </div>
 
 <script>
-function openLogin() {
+function toggleLogin(){
   document.getElementById("loginPanel").classList.toggle("active");
 }
 
-function login() {
+function login(){
   const id = document.getElementById("uid").value;
   const pass = document.getElementById("pwd").value;
 
-  if(id === "DEVMANITEAM" && pass === "Devmani@2026") {
+  if(id === "DEVMANI" && pass === "DEVMANI"){
     window.location.href = "https://script.google.com/a/macros/devmani.net/s/AKfycbww6yRsv6j3ibLloCNkO9Ggu9rFRfPPKCi3Fd72aulQKfE-4il2m_8HmLmcDOg65WOU/exec";
-  } else {
-    alert("Wrong ID or Password");
+  }else{
+    alert("Invalid ID or Password");
   }
 }
 </script>
 
 </body>
 </html>
+
